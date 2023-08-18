@@ -1,0 +1,10 @@
+{
+    "name": "neon-animation-webpage",
+    "version": "1.0.0",
+    "description": "A simple neon animation webpage with password prompt and PDF interactions.",
+    "scripts": {
+        "start": "open index.html"
+    },
+    "author": "OpenAI",
+    "license": "ISC"
+}

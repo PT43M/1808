@@ -1,0 +1,118 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow: hidden;
+}
+
+#pageBackground {
+    background-color: #FF6EC7;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.box {
+    position: absolute;
+    transition: all 1.5s cubic-bezier(0.25, 1, 0.5, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0px 0px 20px rgba(0,0,0,0.2); /* Subtle shadow for depth */
+}
+
+.yellow-box {
+    background-color: #FFFF00;
+    width: calc(67vw * 0.67 * 0.67);
+    height: calc(67vh * 0.67 * 0.67);
+    z-index: 1;
+}
+
+.white-box {
+    background-color: #FFFFFF;
+    width: 67vw;
+    height: 67vh;
+    z-index: 2;
+}
+
+.green-box {
+    background-color: #39FF14;
+    width: calc(67vw * 0.67);
+    height: calc(67vh * 0.67);
+    z-index: 3;
+    overflow: hidden;
+}
+
+.file-link {
+    display: block;
+    margin: 10px;
+    padding: 12px 24px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    text-decoration: none;
+    color: #333;
+    border-radius: 25px;
+    transition: background-color 0.4s, transform 0.3s;
+    font-weight: 600;
+    border: 2px solid transparent;
+}
+
+.file-link:hover {
+    background-color: rgba(255, 255, 255, 1); /* Solid white on hover */
+    transform: scale(1.05); /* Slight zoom on hover for an interactive feel */
+    border-color: #FF6EC7; /* A matching border color to page background for contrast */
+}
+
+/* Modify the poem animation duration for faster scrolling */
+@keyframes crawlPoem {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(-100%);
+    }
+}
+
+.poem {
+    font-size: 1.5rem;
+    animation: crawlPoem 12s linear infinite; /* Adjusted the animation to be vertical */
+    overflow: hidden; /* Hide the overflow */
+}
+
+.password-prompt {
+    background-color: #4D4DFF;
+    color: #FFF;
+    padding: 15px;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 50%; /* Only cover half the width */
+    height: 100%;
+    justify-content: flex-start; /* Align content to the top */
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.password-prompt input {
+    padding: 6px 12px;
+    border: 2px solid #FFF;
+    margin-top: 12px;
+    border-radius: 25px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+}
+.password-prompt input:focus {
+    border-color: #FF6EC7; /* Matching with the page background when the input is in focus */
+}
+
+.error-message {
+    color: red;
+    margin-top: 10px;
+    font-weight: 600;
+}
